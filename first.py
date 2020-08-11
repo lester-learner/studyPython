@@ -1,11 +1,49 @@
-class Person:
-    def who(self):
-        print(self)
+import second
 
-        
-zhangsan = Person()
-#第一种方式
-zhangsan.who()
-#第二种方式
-who = zhangsan.who
-who()#通过 who 变量调用zhangsan对象中的 who() 方法
+
+def outer():
+    name = "i am outer"
+
+    def inner():
+        print(name)
+        print("i am inner")
+
+    return inner()
+
+
+outer()
+
+# li = ['a', 'b', 'c', '\ ', 'n', 'd']
+# j = 0
+# for i in li:
+#     print(i)
+#     print(j)
+#     if j == '\ ' and i == 'n':
+#         print("!!!!!!!!!!!!!")
+#     j = i
+#     print("---------")
+
+j = 0
+with open(
+        'C:/Users/Leste/Desktop/test.txt',
+        mode='r+',
+        encoding='utf-8',
+) as f:
+
+    f.seek(0, 0)
+    f.read()
+    print(f.read())
+    f.write(input())
+    print(f.read())
+    n = list(f.read())
+    # print("！！！！！！！！！！！！！")
+    print(n)
+    for i in n:
+        if j == ' ' and i == 'n':
+            print("！！！！！！！！！！！！！")
+            f.write('\n')
+            print(f.read())
+            print(n)
+        j = i
+
+print(f.closed)
