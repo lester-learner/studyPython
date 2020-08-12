@@ -56,9 +56,9 @@ print("我是插入列表：", li)
 li2[0] = 99999
 print("我是插入后原始列表修改后的：", li)
 
-# li.append(li2)
-# print(li)
-# li2[0] = 9
-# print(li)
+li.append(li2)
+print(li)
+li2[0] = 9
+print(li)
 
 
